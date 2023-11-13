@@ -1,16 +1,13 @@
 pipeline{
-    agent any
-
+    agent any;
     stages{
-         
-        stage('Git Checkout'){
+        stage('GIT CHECKOUT'){
             steps{
-            gitCheckout(
-                branch: "main",
-                url: "https://github.com/praveen1994dec/Java_app_3.0.git"
-            )
+                git branch: 'main', url: 'https://github.com/kris-devops/Java_app_3.0.git'
             }
         }
-
-}
+        stage('Checkput success?'){
+            echo " Checked out successfully"
+        }
+    }
 }
