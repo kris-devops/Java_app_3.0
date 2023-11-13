@@ -7,7 +7,9 @@ pipeline{
             }
         }
         stage('Checkput success?'){
-            echo " Checked out successfully"
+            steps{
+                 echo " Checked out successfully"
+            }
         }
     }
 }
