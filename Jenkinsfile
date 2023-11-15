@@ -13,9 +13,19 @@ pipeline{
                  echo " Checked out successfully"
             }
         }
-        stage('check mvn version'){
+        stage('Generating maven package and installing to local repo'){
             steps{
-                sh 'mvn -v'
+                sh 'mvn clean install -DskipTests'
+            }
+        }
+        stage('mvn Integration Test'){
+            steps{
+            sh 'mvn verify -DskipUnitTests'
+            }
+        }
+        stage('Docker Image Build'){
+            steps{
+            sh 'docker image build -t krishnakr198989/javaApp:latest .'
             }
         }
     }
