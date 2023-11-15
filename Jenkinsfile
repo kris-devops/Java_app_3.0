@@ -13,7 +13,7 @@ pipeline{
                  echo " Checked out successfully"
             }
         }
-        stage(check mvn version'){
+        stage('check mvn version'){
             steps{
                 sh 'mvn -v'
             }
