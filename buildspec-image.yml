@@ -16,6 +16,7 @@ phases:
     commands:
       - echo Copying Artifacts to Docker Context...
       - cp $CODEBUILD_SRC_DIR_build_output/target/kubernetes*.jar .
+      - ls -ltr
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
