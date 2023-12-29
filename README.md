@@ -51,3 +51,5 @@ Now we can cleanup by using below commands:
     kubectl delete svc kubernetes-configmap-reload
 # springboot_k8s_application
 # mrdevops_java_app
+
+# updates are in progress by Krishna
